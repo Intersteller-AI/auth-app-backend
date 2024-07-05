@@ -67,8 +67,8 @@ You should see a JSON response indicating that the server is started:
 ```json
 {
   "message": "server is started",
-    success: true,
-    error: false,
+  "success": true,
+  "error": false,
 }
 ```
 
