@@ -18,7 +18,7 @@ const signin = async (req, res, next) => {
       });
     }
 
-    if (compare(password, user.password)) {
+    if (await compare(password, user.password)) {
       const jwt = await sign(
         {
           id: user.id,
@@ -29,6 +29,8 @@ const signin = async (req, res, next) => {
         }
       );
 
+      const { id, password, ...userRes } = user;
+
       return res
         .status(200)
         .cookie("token", jwt, {
@@ -38,6 +40,7 @@ const signin = async (req, res, next) => {
           httpOnly: true,
         })
         .json({
+          user: userRes,
           message: "user authenticated",
           success: true,
           error: false,
