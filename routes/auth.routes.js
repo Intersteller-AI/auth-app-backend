@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post("/signin", signin);
 
-router.post("/profile", authGuard, profile);
+router.get("/profile", authGuard, profile);
 
 module.exports = router;
