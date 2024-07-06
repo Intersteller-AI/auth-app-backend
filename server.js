@@ -1,18 +1,13 @@
 const express = require("express");
 require("dotenv").config();
-const authRoutes = require("./routes/auth.routes");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const authRoutes = require("./routes/auth.routes");
 
-const app = express(); // Create an Express application
+const app = express();
 
 // Middleware to parse JSON payloads
 app.use(express.json());
-
-// Middleware to parse URL-encoded payloads
-// The extended option allows for rich objects and arrays to be encoded into the URL-encoded format
-// The limit option sets the maximum size for the URL-encoded payload to 50MB
-app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Middleware to parse cookies
 app.use(cookieParser());

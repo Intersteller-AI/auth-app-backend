@@ -88,4 +88,4 @@ backend/
 └── README.md          # Documentation file (this file)
 ```
 
-By following these instructions, you should be able to set up and run the `backend` project successfully.
+By following these instructions, you should be able to set up and run the `backend` project.
